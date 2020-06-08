@@ -13,6 +13,12 @@ namespace m151.Models
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(
+                @"Server=mssql.gibz.thommenmedia.ch\mssqllocaldb;Database=m151-beutler;Integrated Security=True");
+        }
+
         public DbSet<TodoItem> TodoItems { get; set; }
     }
 }
